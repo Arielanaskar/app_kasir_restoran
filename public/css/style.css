@@ -1,0 +1,534 @@
+/* custom css portal  */
+
+.btn.app-btn-info {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+.btn.app-btn-warning {
+    background-color: #ffc107;
+    color: #fff;
+}
+
+#dropmenu {
+    background-color: #fff;
+}
+
+.alert {
+    margin-top: 0px;
+    border-radius: 0px;
+}
+
+.alert-dark {
+    background-color: #15a362;
+    color: #fff;
+}
+
+.btn-close {
+    color: #fff;
+}
+
+/* edit css  */
+
+
+.app-card.app-card-settings {
+    background-color: transparent;
+} 
+
+.picture-container {
+    position: relative;
+}
+
+#select-picture {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid red;
+    opacity: 0;
+    z-index: 99;
+    cursor: pointer;
+}
+
+#select-picture:hover +  .black-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #252525af;
+    display: flex;
+    flex-direction: column;
+}
+
+.black-screen {
+    justify-content: center;
+    align-items: center;
+    display: none;
+    font-size: 25px;
+    color: #fff;
+}
+
+.black-screen p {
+    font-size: 15px;
+}
+
+
+/* sidebar  */
+
+#sidebar {
+    background-color: #252525;
+}
+
+.arrow {
+    color: #6D7074;
+}
+
+.nav-item {
+    margin-bottom: 10px;
+}
+
+.nav-link {
+    background-color: #252525;
+}
+
+.nav-link-text{
+    color: #6D7074;
+}
+
+.nav-icon {
+    color: #6D7074;
+    font-size: 16px;
+}
+
+.nav-link:hover .nav-link-text{
+    color: #fff;
+    transition: ease-in-out 0.3s;
+}
+
+.nav-link:hover .nav-icon{
+    color: #fff;
+    transition: ease-in-out 0.3s;
+}
+
+.nav-item .nav-link.active {
+    background-color: #252525;
+}
+
+.nav-item .nav-link.active .nav-icon{
+    color: #fff;
+}
+
+.nav-item .nav-link.active .nav-link-text {
+    color: #fff;
+}
+
+.nav-item .nav-link.active {
+    border-left: 3px solid #15a362;
+    /* border-left: 3px solid #FFD500; */
+}
+
+#submenu-1, #submenu-2{
+    background-color: #252525;
+}
+
+.nav-link:hover .submenu-arrow svg {
+    color: #fff;
+}
+
+.app-nav .nav-item.has-submenu .nav-link.submenu-toggle.active .submenu-arrow svg {
+    color: #fff;
+}
+
+.app-branding {
+    height: 90px;
+}
+
+.app-logo {
+    height: max-content;
+}
+
+.app-branding .logo-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.app-branding .logo-icon-text {
+    width: 110px;
+    height: 45px;
+    margin-left: 10px;
+    padding-top: 5px;
+}
+
+
+
+.app-branding .logo-text {
+    height: 50px;
+    color: #fff;
+    font-size: 16px;
+}
+
+#submenu-1 .submenu-item:hover .submenu-link, #submenu-2 .submenu-item:hover .submenu-link {
+    color: #fff;
+}
+
+#sidepanel-close {
+    color: #fff;
+}
+
+.app-sidepanel {
+    border: none;
+}
+
+.price {
+    font-weight: bold;
+    color: rgb(92, 89, 89);
+}
+
+.app-nav .nav-link.submenu-toggle.active {
+    border: none;
+    background-color: #252525;
+    /* border-left: 3px solid #15a362; */
+}
+
+.app-nav .nav-link.submenu-toggle.active .nav-icon {
+    margin-left: 4px;
+    /* border-left: 3px solid #15a362; */
+    color: #fff;
+}
+
+.submenu-item .submenu-link.active {
+    color: #fff;
+}
+
+
+.form-select {
+    outline: none;
+    border: 1px solid #ced4da;
+}
+
+.form-select:focus {
+    border-color: none;
+    outline: 0;
+    box-shadow: none;
+}
+
+.orders-table-tab .flex-sm-fill.text-sm-center.nav-link {
+    background-color: #fff;
+}
+
+.orders-table-tab .flex-sm-fill.text-sm-center.nav-link.active {
+    color: #15a362;
+    border-bottom: 2px solid #15a362;
+}
+
+.orders-table-tab .flex-sm-fill.text-sm-center.nav-link:hover {
+    /* background-color: rgba(177, 243, 202, 0.486); */
+    color: #15a362;
+}
+
+.orders-table-tab .flex-sm-fill.text-sm-center.nav-link.active:hover {
+    color: #15a362;
+    border-bottom: 2px solid #15a362;
+}
+
+.table-search-form .col-auto .form-control.search-orders {
+    height: 40px;
+    border: 1px solid #ced4da;
+}
+
+.table-search-form .col-auto .form-control.search-orders:focus {
+    border: 1px solid #0d6efd;
+}
+
+.page-link {
+    color: #6D7074;
+}
+
+.img-preview {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    opacity: 0;
+}
+
+.img-area {
+	position: relative;
+	width: 100%;
+	height: 240px;
+	background-color: #f2f2f2;
+	margin-bottom: 30px;
+	border-radius: 15px;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.img-area .icon {
+	font-size: 100px;
+}
+
+.img-area h3 {
+    text-align: center;
+	font-size: 20px;
+	font-weight: 500;
+	margin-bottom: 6px;
+}
+
+.img-area p span {
+	font-weight: 600;
+}
+
+.select-image {
+	width: 100%;
+    height: 240px;
+    position: absolute;
+    border-radius: 15px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 99;
+}
+
+.view-path-img {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: rgb(58, 58, 58);
+}
+
+.view-path-img[data-path="true"] {
+    opacity: 0;
+}
+
+.select-image:hover + .view-path-img[data-path="false"] {
+    background-color: #252525af;
+    cursor: pointer;
+    color: #fff;
+}
+
+.select-image:hover + .view-path-img[data-path="true"] {
+    opacity: 1;
+    background-color: #252525af;
+    cursor: pointer;
+    color: #fff;
+}
+
+.select-image:hover + .view-path-img h3 {
+    color: #fff;
+}
+
+.btn-submit {
+    width: 100%;
+    height: 40px;
+    color: #fff;
+}
+
+.btn-submit:hover {
+    color: #fff;
+}
+
+
+
+/* Dashboard Index */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border-radius: 20px;
+  background-color: transparent;
+  border: none;
+}
+
+.grid-margin {
+  margin-bottom: 2.5rem;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1.25rem;
+}
+
+.card .card-body {
+  padding: 0.5rem 1.25rem;
+}
+
+.stretch-card {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  -webkit-justify-content: stretch;
+  justify-content: stretch;
+}
+
+.card-people {
+    position: relative;
+    height: 310px;
+    background-image: url(/images/background/bg-dashboard.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+}
+
+.card-people .weather-info {
+    position: absolute;
+    top: 40px;
+    left: 60px; 
+}
+
+.card-people .weather-info sup {
+    font-size: 18px;
+}
+
+.card-people .weather-info .location {
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.card-people .weather-info *{
+    color: #fff;
+}
+
+.weather-info sup {
+    font-size: 18px;
+}
+
+.weather-info .location {
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.stretch-card > .card {
+  width: 100%;
+  min-width: 100%;
+}
+
+.card.card-dark-blue, .card.card-light-blue, .card.card-light-danger, .card.card-tale {
+  background: transparent;
+  color: #000;
+}
+
+/* log css */
+
+
+.bullet-line-list {
+  padding-left: 30px;
+  position: relative;
+  list-style-type: none;
+  margin-bottom: 0;
+}
+
+.bullet-line-list li {
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.bullet-line-list li:last-child {
+  padding-bottom: 0;
+}
+
+.bullet-line-list li:before {
+  width: 40px;
+  height: 40px;
+  left: -50px;
+  top: -2px;
+  border: 4px solid  #E9EDFB;
+  /* margin-right: 15px; */
+  z-index: 2;
+  /* background: #1F3BB3; */
+  background-image: url(../images/users/user-1.jpg);
+  background-size: cover;
+}
+
+.bullet-line-list li:before {
+  content: "";
+  position: absolute;
+  border-radius: 100%;
+}
+
+.bullet-line-list :after{
+  content: "";
+  border: 2px solid #15a362;
+  position: absolute;
+  top: -18px;
+  bottom: 0;
+  left: -32px;
+  border-radius: 5px;
+}
+
+.bullet-line-list :last-child :after{
+  display: none;
+}
+
+.text-light-green {
+  color: #15a362;
+}
+
+.card-activity {
+    background-color: transparent;
+    border-radius: 0px;
+    border: none;
+}
+
+/* login css  */
+
+.app-login .auth-background-holder {
+    background-image: url(../images/background/wp10277400-indonesian-food-wallpapers.jpg);
+}
+
+/* menu css  */
+
+/* .card-menu {
+    background-color: #fdfdfd83;
+} */
+
+.menu .nav-tabs {
+  border: 0;
+}
+
+.menu .nav-link {
+  margin: 0 10px;
+  padding: 10px 5px;
+  transition: 0.3s;
+  color: var(--color-secondary);
+  border-radius: 0;
+  cursor: pointer;
+  height: 100%;
+  border: 0;
+  border-bottom: 2px solid #b6b6bf;
+}
+
+.menu .nav-link h4{
+    font-size: 20px;
+}
+
+.menu .nav-link:hover h4 {
+    color: #15a362;
+}
+
+.menu .nav-link.active {
+    background-color: transparent;
+    border-left: none;
+    border-bottom: 2px solid #15a362;
+}
+
+.menu .nav-link.active h4 {
+    color: #15a362;
+}
+
+.dropdown-menu {
+    background-color: #F5F6FE;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #F5F6FE;
+}
