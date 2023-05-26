@@ -16,11 +16,10 @@ return new class extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->date('date');
-            $table->string('no_invoice');
-            $table->bigInteger('total');
-            $table->integer('no_table');
-            $table->bigInteger('paid');
+            $table->string('no_table');
+            $table->bigInteger('total_transaction');
+            $table->bigInteger('total_payment');
+            $table->string('status');
             $table->timestamps();
         });
     }

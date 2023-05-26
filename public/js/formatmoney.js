@@ -1,5 +1,12 @@
+const price = document.getElementById("price");
+const modal = document.getElementById("modal");
+
 price.addEventListener("keyup", function (e) {
     price.value = formatRupiah(this.value);
+});
+
+modal.addEventListener("keyup", function (e) {
+    modal.value = formatRupiah(this.value);
 });
 
 function formatRupiah(angka) {

@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('transaction_details', function (Blueprint $table) {
             $table->id();
-            $table->string('no_invoice');
+            $table->foreignId('transaction_id');
             $table->foreignId('menu_id');
             $table->integer('qty');
-            $table->bigInteger('price');
+            $table->integer('price');
             $table->timestamps();
         });
     }

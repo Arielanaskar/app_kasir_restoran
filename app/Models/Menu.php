@@ -10,4 +10,9 @@ class Menu extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    public function menu() 
+    {
+        return $this->hasMany(TransactionDetail::class);
+    }
 }

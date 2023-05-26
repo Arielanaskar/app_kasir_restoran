@@ -15,6 +15,15 @@
                 @enderror
             </div>
             <div class="mb-3">
+                <label for="modal" class="form-label">Modal</label>
+                <input type="text" class="form-control @error('modal') is-invalid @enderror" id="modal" name="modal" value="{{ old('modal') }}" required>
+                @error('modal')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+            <div class="mb-3">
                 <label for="price" class="form-label">Price</label>
                 <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" name="price" value="{{ old('price') }}" required>
                 @error('price')
@@ -29,12 +38,21 @@
                     <option selected disabled hidden>- select category -</option>
                     <option value="food"  @if (old('category') == "food") {{ 'selected' }} @endif >Food</option>
                     <option value="drink"  @if (old('category') == "drink") {{ 'selected' }} @endif >Drink</option>
+                    <option value="dessert"  @if (old('category') == "dessert") {{ 'selected' }} @endif >Dessert</option>
                 </select>
                 @error('category')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
                 @enderror
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                @error('description')
+                    <p class="small text-danger">{{ $message }}</p>
+                @enderror
+                <input id="description" type="hidden" name="description" value="{{ old('description') }}">
+                <trix-editor input="description"></trix-editor>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="img">Upload Image</label>
@@ -60,7 +78,6 @@
         const img_preview = document.querySelector('.img-preview');
         const view_path_img = document.querySelector('.view-path-img');
         const select_image = document.querySelector('.select-image');
-        const price = document.getElementById('price');
         
         img.addEventListener('change', function() {
             const files = img.files[0];

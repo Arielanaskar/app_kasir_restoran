@@ -1,8 +1,17 @@
 <?php
 
+use App\Http\Controllers\AccountController;
+use App\Http\Controllers\ActivityLogController;
+use App\Http\Controllers\CobaController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\ReportController;
+use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Transaction;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,10 +24,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [DashboardController::class, 'index']);
+Route::get('/', [DashboardController::class, 'index'])->middleware('auth');
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/activityLog', function () {
-    return view('activityLog');
+Route::resource('/menu', MenuController::class)->middleware('auth');
+Route::resource('/transaction', TransactionController::class)->middleware('auth');
+Route::resource('/user', UserController::class)->middleware('auth');
+Route::post('/user/delete', [UserController::class, 'destroy'])->middleware('auth');
+Route::get('/user/edit/{user}', function (User $user) {
+    return view('account.edit', [
+        'user' => $user->with('level')->where('id', $user->id)->get()
+    ]);
+})->middleware('auth');
+Route::post('/user/edit/{user}', [UserController::class, 'updateProfile'])->middleware('auth');
+
+Route::get('/menus/shows', [MenuController::class, 'show']);
+
+Route::get('/activityLog', [ActivityLogController::class, 'index']);
+
+Route::get('/invoice/{transaction}', function (Transaction $transaction) {
+    return View('transaction.invoice', [
+        'data' => $transaction->with(['transaction_details', 'transaction_details.menu', 'user'])->where('id',$transaction->id)->get()
+    ]);
 });
 
-Route::resource('/menu', MenuController::class);
+Route::get('/report', [ReportController::class, 'index'])->middleware('auth');

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ActivityLog;
 use App\Models\Menu;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class MenuController extends Controller
 {
@@ -17,7 +19,8 @@ class MenuController extends Controller
     {
         return view('menu.index', [
             'foods' => $menu->where('category','food')->latest()->get(),
-            'drinks' => $menu->where('category', 'drink')->latest()->get()
+            'drinks' => $menu->where('category', 'drink')->latest()->get(),
+            'dessert' => $menu->where('category', 'dessert')->latest()->get()
         ]);
     }
 
@@ -41,18 +44,26 @@ class MenuController extends Controller
     {
         $validateddata = $request->validate([
            'name' => 'required|min:3',
-           'price' => 'required|regex:/([0-9]+[.,]*)+/',
+           'modal' => 'required|regex:/([0-9]+[.,]*)+/',
+           'price' => 'required|regex:/([0-9]+[.,]*)+/|gte:modal',
            'category' => 'required',
-           'image' => 'required|image|file|max:2048'
+           'image' => 'required|image|file|max:3048',
+           'description' => 'required'
         ]);
 
 
+        $validateddata["modal"] = filter_var($request->modal, FILTER_SANITIZE_NUMBER_INT);
         $validateddata["price"] = filter_var($request->price, FILTER_SANITIZE_NUMBER_INT);
-        $validateddata['picture'] = $request->file('image')->store('menu');
-        $validateddata['status'] = 'ready';
+        $validateddata["picture"] = $request->file('image')->store('menu');
 
         Menu::create($validateddata);
 
+        $activity = [
+            'user_id' => Auth::id(),
+            'action' => 'added a menu '.strtolower($request->name)
+        ];
+
+        ActivityLog::create($activity);
         return redirect('/menu')->with('success','New menu has been added !');
     }
 
@@ -62,11 +73,12 @@ class MenuController extends Controller
      * @param  \App\Models\Menu  $menu
      * @return \Illuminate\Http\Response
      */
-    public function show(Menu $menu)
+    public function show(Request $request, Menu $menu)
     {
-        return view('menu.show',[
-            'menu' => $menu
-        ]);
+        $id = $request->id;
+        $menu = $menu->find($id);
+        $menu->diff = $menu->created_at->diffForHumans();;
+        return $menu;
     }
 
     /**
@@ -92,9 +104,33 @@ class MenuController extends Controller
     public function update(Request $request, Menu $menu)
     {
         $validateddata = $request->validate([
-           'name' => 'required|min:3',
-           'price' => 'required|regex:/([0-9]+[.,]*)+/',
+            'name' => 'required|min:3',
+            'modal' => 'required|regex:/([0-9]+[.,]*)+/',
+            'price' => 'required|regex:/([0-9]+[.,]*)+/|gte:modal',
+            'category' => 'required',
+            'picture' => 'image|file|max:3048',
+            'description' => 'required'
         ]);
+
+
+        $validateddata["modal"] = filter_var($request->modal, FILTER_SANITIZE_NUMBER_INT);
+        $validateddata["price"] = filter_var($request->price, FILTER_SANITIZE_NUMBER_INT);
+
+        if ($request->file('picture')) {
+            Storage::delete($menu->picture);
+            $validateddata['picture'] = $request->file('picture')->store('menu'); 
+        }
+        
+        Menu::where('id', $menu->id)
+             ->update($validateddata);
+
+        $activity = [
+            'user_id' => Auth::id(),
+            'action' => 'edited a menu '.strtolower($menu->name)
+        ];
+        ActivityLog::create($activity);
+
+        return redirect('/menu')->with('success', 'menu has been updated !');
     }
 
     /**
@@ -105,7 +141,15 @@ class MenuController extends Controller
      */
     public function destroy(Menu $menu)
     {
+        Storage::delete($menu->picture);   
         $menu->destroy($menu->id);
+        $activity = [
+            'user_id' => Auth::id(),
+            'action' => 'deleted a menu '.strtolower($menu->name)
+        ];
+        ActivityLog::create($activity);
         return redirect('/menu');
     }
+
 }
+
