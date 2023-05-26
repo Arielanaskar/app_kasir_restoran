@@ -18,7 +18,7 @@
 <li>Front End : HTML, Bootstrap</li>
 <li>Backend : Laravel PHP FrameWork</li>
 <li>Javascript : Native Javascript, & Jquery</li>
-<li>Bootstrap Theme By <a href='https://demo.getstisla.com/index.html'>[Stisla]</a></li>
+<li>Bootstrap Theme By <a href='https://themes.3rdwavemedia.com/'>[Xiaoying Riley]</a></li>
 </ul>
 <br/>
 <h3>Fitur Aplikasi :</h3>
