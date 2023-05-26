@@ -46,8 +46,8 @@
     <li>Mengatur level hak akses pegawai.</li>
     <li>Memantau aktivitas pegawai dalam aplikasi.</li>
   </ul>
-<br><br>
-<h3>Tampilan Aplikasi</h3>
+<br>
+<h3>Tampilan Aplikasi :</h3>
 <br><br>
 
 ### <p>Tanggal Rilis</p>
@@ -94,12 +94,15 @@ php artisan serve
 
 5. **Akun Login**
 ```bash
+Admin
 username: admin
 password: asd321 
 
+Manager
 username: manager 
 password: asd321
 
+Kasir
 username: cashier
 password: asd321 
 ```
