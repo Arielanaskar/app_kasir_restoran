@@ -94,9 +94,14 @@ php artisan serve
 
 5. **Akun Login**
 ```bash
-admin, pw : asd321 
-manager, pw : asd321
-kasir, pw : asd321 
+username: admin
+password: asd321 
+
+username: manager 
+password: asd321
+
+username: cashier
+password: asd321 
 ```
 
 ## 🧑 Pemilik
