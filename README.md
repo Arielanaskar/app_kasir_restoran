@@ -1,66 +1,146 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<img src="https://i.ibb.co/Ps2bhfH/logo5.png" width="200px">
 </p>
 
-## About Laravel
+<h1 align="center">Aplikasi Kasir Restoran</h1>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<span align="center">
+    
+![GitHub repo size](https://img.shields.io/github/repo-size/Arielanaskar/app_kasir_restoran)
+![GitHub last commit](https://img.shields.io/github/last-commit/Arielanaskar/app_kasir_restoran)
+    
+</span>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<hr/>
+<br/>
+<h3>Teknologi yang digunakan :</h3>
+<ul>
+<li>Front End : HTML, Bootstrap</li>
+<li>Backend : Laravel PHP FrameWork</li>
+<li>Javascript : Native Javascript, & Jquery</li>
+<li>Bootstrap Theme By <a href='https://themes.3rdwavemedia.com/'>[Xiaoying Riley]</a></li>
+</ul>
+<br/>
+<h3>Fitur Aplikasi :</h3>
+<h4>Manager</h4>
+  <p>Sebagai seorang manager, Anda memiliki kontrol penuh atas aplikasi ini. Fitur-fitur yang tersedia untuk level hak akses manager antara lain:</p>
+  <ul>
+    <li>Melihat laporan penjualan secara harian, bulanan, maupun keseluruhan.</li>
+    <li>Mengelola produk, termasuk menambah, menghapus, dan memperbarui informasi produk.</li>
+    <li>Memantau aktivitas pegawai dalam aplikasi.</li>
+  </ul>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+  <h4>Kasir</h4>
+  <p>Sebagai seorang kasir, Anda bertanggung jawab untuk menangani transaksi penjualan. Berikut adalah fitur-fitur yang tersedia untuk level hak akses kasir:</p>
+  <ul>
+    <li>Melakukan transaksi penjualan dengan input produk, kuantitas, dan meja.</li>
+    <li>Mencetak struk pembayaran untuk pelanggan.</li>
+    <li>Melihat riwayat transaksi penjualan pribadi.</li>
+    <li>Memperbarui status pembayaran untuk transaksi tertentu.</li>
+  </ul>
 
-## Learning Laravel
+  <h4>Admin</h4>
+  <p>Sebagai seorang admin, Anda memiliki peran penting dalam pengaturan sistem aplikasi. Fitur-fitur yang tersedia untuk level hak akses admin meliputi:</p>
+  <ul>
+    <li>Mengelola akun pegawai, termasuk membuat, menghapus, dan memperbarui informasi pegawai.</li>
+    <li>Mengatur level hak akses pegawai.</li>
+    <li>Memantau aktivitas pegawai dalam aplikasi.</li>
+  </ul>
+<br>
+<h3> Beberapa Tampilan Aplikasi :</h3>
+<br>
+<table>
+<tr>
+    <td>
+    <small>Halaman List Menu</small>
+        <img src="https://i.ibb.co/JrcCyRc/Screenshot-297.png" alt="Screenshot-297" width="100%" border="0">
+    </td>
+    <td>
+    <small>Halaman Order Menu</small>
+        <img src="https://i.ibb.co/PTKJzLz/Screenshot-300.png" alt="Screenshot-300" width="100%" border="0">   
+    </td>
+</tr>
+<tr>
+    <td>
+        <small>Pemilihan Meja</small>
+        <img src="https://i.ibb.co/dkXqfxR/Screenshot-301.png" alt="Screenshot-301" width="100%" border="0">
+    </td>
+     <td>
+        <small>Halaman Data Transaksi</small>
+        <img src="https://i.ibb.co/TgQB2wR/Screenshot-302.png" alt="Screenshot-302" width="100%" border="0">
+    </td>
+</tr>
+<tr>
+    <td>
+        <small>Log Aktivitas</small>
+        <img src="https://i.ibb.co/Ws487dK/Screenshot-303.png" alt="Screenshot-303" width="100%" border="0">
+    </td>
+</tr>   
+</table> 
+<br><br>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### <p>Tanggal Rilis</p>
+**Release date : 4 April 2023**
+> Siapapun diperbolehkan untuk fork/clone atau develop project ini dan berikan project stars dan follow akun saya juga oke, karena ini merupakan project yang saya buat ketika UKK
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+------------
+## 💻 Panduan Instalasi Project
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. **Clone Repository**
+```bash
+git clone https://github.com/Arielanaskar/app_kasir_restoran.git
+cd app_kasir_restoran
+composer install
+npm install
+copy .env.example rename->.env
+```
+2. **Buka ```.env``` lalu ubah baris berikut sesuaikan dengan databasemu yang ingin dipakai**
+```
+DB_PORT=3306
+DB_DATABASE=app_kasir_restoran
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-## Laravel Sponsors
+3. **Migration & Seeder Database SQL** (pastikan internet nyala, untuk mengunduh gambar dari setiap menu)
+```bash
+php artisan migrate
+php artisan db:seed
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+4. **Jalankan bash**
+```bash
+php artisan key:generate
+php artisan config:cache
+php artisan storage:link
+php artisan route:clear
+```
 
-### Premium Partners
+5. **Jalankan website**
+```bash
+php artisan serve
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+5. **Akun Login**
+```bash
+Admin
+username: admin
+password: asd321 
+
+Manager
+username: manager 
+password: asd321
+
+Kasir
+username: cashier
+password: asd321 
+```
+
+## 🧑 Pemilik
+
+👤  <a href="https://www.instagram.com/arilanaskar_/"> **Ariel Anaskar**</a>
+- Facebook : <a href="https://web.facebook.com/ariel.anaskar.9"> Ariel Anaskar</a>
 
 ## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Contributions, issues and feature requests di persilahkan.
+Jangan ragu untuk memeriksa halaman masalah jika Anda ingin berkontribusi.
