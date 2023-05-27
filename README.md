@@ -12,7 +12,7 @@
 </span>
 
 <hr/>
-<br/><br/>
+<br/>
 <h3>Teknologi yang digunakan :</h3>
 <ul>
 <li>Front End : HTML, Bootstrap</li>
@@ -102,7 +102,7 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-3. **Migration & Seeder Database SQL**
+3. **Migration & Seeder Database SQL** (pastikan internet nyala, untuk mengunduh gambar dari setiap menu)
 ```bash
 php artisan migrate
 php artisan db:seed
@@ -138,4 +138,9 @@ password: asd321
 
 ## 🧑 Pemilik
 
-👤 <a href="https://www.instagram.com/arilanaskar_/"> **Ariel Anaskar**</a>
+👤  <a href="https://www.instagram.com/arilanaskar_/"> **Ariel Anaskar**</a>
+- Facebook : <a href="https://web.facebook.com/ariel.anaskar.9"> Ariel Anaskar</a>
+
+## Contributing
+Contributions, issues and feature requests di persilahkan.
+Jangan ragu untuk memeriksa halaman masalah jika Anda ingin berkontribusi.
