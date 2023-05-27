@@ -138,4 +138,4 @@ password: asd321
 
 ## 🧑 Pemilik
 
-👤 <a href="https://www.instagram.com/ryandinulfatah12/"> **Ariel Anaskar**</a>
+👤 <a href="https://www.instagram.com/arilanaskar_/"> **Ariel Anaskar**</a>
