@@ -2,7 +2,7 @@
 
 @section('container')
 
-<h1 class="app-page-title mb-2">All's Employee</h1>
+<h1 class="app-page-title mb-2">All Employee's</h1>
 <section class="ftco-section">
     <div class="container">
         <div class="row">

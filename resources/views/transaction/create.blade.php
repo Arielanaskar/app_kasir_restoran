@@ -18,7 +18,7 @@
                             d="M4 7h22M4 15h22M4 23h22"></path>
                     </svg>
                 </a>
-                <h5 class="fs-5 fw-bold text-black ms-4">All's Menu</h5>
+                <h5 class="fs-5 fw-bold text-black ms-4">All Menu's</h5>
             </div>
             {{-- <div class="col-sm-7 d-flex align-items-center search-container-tr">
                 <div class="search-mobile-trigger search-icon-transaction">

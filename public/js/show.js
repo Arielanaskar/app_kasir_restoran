@@ -9,14 +9,14 @@ $(document).ready(function() {
                                             <div class="row d-flex">
                                                 <div class="col-md">
                                                     <div class="row">
-                                                        <div class="col-md-6 p-4">
+                                                        <div class="col-md-6 p-4 d-flex align-items-center">
                                                             <div class="images">
                                                                 <div class="text-center">
                                                                     <img src="storage/${res.picture}" width="200" />
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md p-4" style="background-color: #eee;">
+                                                        <div class="col-md p-4 rounded-end" style="background-color: #eee;">
                                                             <div class="d-flex justify-content-between align-items-center">
                                                                 <div class="d-flex align-items-center">
                                                                     <span class="ml-1 small">Uploaded : ${res.diff}</span>

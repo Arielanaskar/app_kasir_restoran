@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-    <h1 class="app-page-title mb-2">All's Menu</h1>
+    <h1 class="app-page-title mb-2">All Menu's</h1>
     <div class="menu mb-4">
         <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
             <li class="nav-item">

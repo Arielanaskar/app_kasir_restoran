@@ -34,7 +34,7 @@
                     </a>
                     <div id="submenu-3" class="submenu submenu-3 {{ Request::is('user') ? 'collapse show' : (Request::is('user/create') ? 'collapse show' : 'collapse') }}" data-bs-parent="#menu-accordion">
                         <ul class="submenu-list list-unstyled">
-                            <li class="submenu-item"><a class="submenu-link {{ Request::is('user') ? 'active' :  ''}}" href="/user">All's Employee</a></li>
+                            <li class="submenu-item"><a class="submenu-link {{ Request::is('user') ? 'active' :  ''}}" href="/user">All Employee's</a></li>
                             <li class="submenu-item"><a class="submenu-link {{ Request::is('user/create') ? 'active' :  ''}}" href="/user/create">Add New Employee</a></li>
                         </ul>
                     </div>
@@ -55,7 +55,7 @@
                     </a>
                     <div id="submenu-1" class="submenu submenu-1 {{ Request::is('menu') ? 'collapse show' : (Request::is('menu/create') ? 'collapse show' : 'collapse') }}" data-bs-parent="#menu-accordion">
                         <ul class="submenu-list list-unstyled">
-                            <li class="submenu-item"><a class="submenu-link {{ Request::is('menu') ? 'active' :  ''}}" href="/menu">All's Menu</a></li>
+                            <li class="submenu-item"><a class="submenu-link {{ Request::is('menu') ? 'active' :  ''}}" href="/menu">All Menu's</a></li>
                             <li class="submenu-item"><a class="submenu-link {{ Request::is('menu/create') ? 'active' :  ''}}" href="/menu/create">Add New Menu</a></li>
                         </ul>
                     </div>
@@ -77,17 +77,17 @@
                     <div id="submenu-2" class="collapse submenu submenu-2 {{ Request::is('transaction') ? 'collapse show' : (Request::is('transaction/create') ? 'collapse show' : 'collapse') }}" data-bs-parent="#menu-accordion">
                         <ul class="submenu-list list-unstyled">
                             @can('manager')
-                            <li class="submenu-item"><a class="submenu-link {{ Request::is('transaction') ? 'active' :  ''}}" href="/transaction">All's Transaction</a></li>
+                            <li class="submenu-item"><a class="submenu-link {{ Request::is('transaction') ? 'active' :  ''}}" href="/transaction">All Transaction's</a></li>
                             @endcan
                             @can('cashier')
-                            <li class="submenu-item"><a class="submenu-link {{ Request::is('transaction') ? 'active' :  ''}}" href="/transaction">All's Transaction</a></li>
+                            <li class="submenu-item"><a class="submenu-link {{ Request::is('transaction') ? 'active' :  ''}}" href="/transaction">All Transaction's</a></li>
                             <li class="submenu-item"><a class="submenu-link {{ Request::is('transaction/create') ? 'active' :  ''}}" href="/transaction/create">Make Order</a></li>
                             @endcan
                         </ul>
                     </div>
                 </li>
                 @endcan
-
+                
                 {{-- activityLog --}}
                 @cannot('cashier')
                 <li class="nav-item">
