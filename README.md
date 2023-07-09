@@ -138,7 +138,7 @@ password: asd321
 ## 🧑 Pemilik
 
 👤  <a href="https://www.instagram.com/arilanaskar_/"> **Ariel Anaskar**</a>
-- Facebook : <a href="https://web.facebook.com/ariel.anaskar.9"> Ariel Anaskar</a>
+- Facebook : <a href="https://web.facebook.com/ariel.anaskar.95"> Ariel Anaskar</a>
 
 ## Contributing
 Contributions, issues and feature requests di persilahkan.
