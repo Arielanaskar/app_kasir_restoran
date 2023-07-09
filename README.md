@@ -90,6 +90,7 @@
 ```bash
 git clone https://github.com/Arielanaskar/app_kasir_restoran.git
 cd app_kasir_restoran
+composer install
 copy .env.example rename->.env
 ```
 2. **Buka ```.env``` lalu ubah baris berikut sesuaikan dengan databasemu yang ingin dipakai**
