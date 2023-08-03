@@ -3,8 +3,6 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Illuminate\Foundation\Exceptions\RegisterErrorViewPaths;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -47,10 +45,6 @@ class Handler extends ExceptionHandler
     {
         $this->reportable(function (Throwable $e) {
             //
-        });
-
-        $this->renderable(function (ModelNotFoundException $e, $request) {
-            return redirect()->back();
         });
     }
 }
