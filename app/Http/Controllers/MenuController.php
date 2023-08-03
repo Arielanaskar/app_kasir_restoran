@@ -17,6 +17,12 @@ class MenuController extends Controller
      */
     public function index(Menu $menu)
     {
+        $user = Auth::user();
+
+        if ($user->level_id === 2 || $user->level_id === 3) {
+            return redirect()->back();
+        }
+
         return view('menu.index', [
             'foods' => $menu->where('category','food')->latest()->get(),
             'drinks' => $menu->where('category', 'drink')->latest()->get(),
@@ -31,6 +37,12 @@ class MenuController extends Controller
      */
     public function create()
     {
+        $user = Auth::user();
+
+        if ($user->level_id === 2 || $user->level_id === 3) {
+            return redirect()->back();
+        }
+
         return view('menu.add');
     }
 
@@ -89,6 +101,12 @@ class MenuController extends Controller
      */
     public function edit(Menu $menu)
     {
+        $user = Auth::user();
+
+        if ($user->level_id === 2 || $user->level_id === 3) {
+            return redirect()->back();
+        }
+        
         return view('menu.edit', [
             'menu' => $menu
         ]);

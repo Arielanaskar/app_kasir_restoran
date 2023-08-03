@@ -1,8 +1,6 @@
 <?php
 
-use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ActivityLogController;
-use App\Http\Controllers\CobaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MenuController;
@@ -12,6 +10,8 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Transaction;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,11 +29,14 @@ Route::get('/login', [LoginController::class, 'index'])->name('login')->middlewa
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::resource('/menu', MenuController::class)->middleware('auth');
-Route::resource('/transaction', TransactionController::class)->middleware('auth');
-Route::resource('/user', UserController::class)->middleware('auth');
+Route::resource('/menu', MenuController::class)->middleware('auth')->missing(fn () => redirect()->back());
+Route::resource('/transaction', TransactionController::class)->middleware('auth')->missing(fn () => redirect()->back());
+Route::resource('/user', UserController::class)->middleware('auth')->missing(fn () => redirect()->back());
 Route::post('/user/delete', [UserController::class, 'destroy'])->middleware('auth');
 Route::get('/user/edit/{user}', function (User $user) {
+    if (Auth::user()->level_id !== $user->level_id) {
+        return redirect()->back();
+    }
     return view('account.edit', [
         'user' => $user->with('level')->where('id', $user->id)->get()
     ]);

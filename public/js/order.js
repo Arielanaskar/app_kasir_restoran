@@ -111,7 +111,11 @@ Removetocart.forEach((e, i) => {
         }
         subtotal.innerText = `Rp ${formatRupiah(total_price.toString())}`;
         total_transaction.innerText = `Rp ${formatRupiah(fixed_price.toString())}`;
-        input_transaction.value = fixed_price;
+        if (fixed_price === 0) {
+            input_transaction.removeAttribute('value');
+        } else {
+            input_transaction.value = fixed_price;
+        }
     })
 })
 
@@ -224,11 +228,11 @@ function deleteOrder() {
     fixed_price = 0;
     subtotal.innerText = 'Rp 0';
     total_transaction.innerText = 'Rp 0';
-    input_transaction.value = '';
-    menu_id.value = '';
+    input_transaction.removeAttribute('value')
+    menu_id.removeAttribute('value')
     document.getElementById("table_selected").value = ' ';
     document.querySelector(".tables-selected").innerText = `Table `;
-    table_selected = [];
+    table_selected.removeAttribute('value');
     table.forEach((e, i) => {
         let type = e.children.item(0).getAttribute("class");
         let tbl_img = table[i].children.item(0);
@@ -324,6 +328,10 @@ function remove(e) {
 
     subtotal.innerText = `Rp ${formatRupiah(total_price.toString())}`;
     total_transaction.innerText = `Rp ${formatRupiah(fixed_price.toString())}`;
-    input_transaction.value = fixed_price;
     menu_id.value = JSON.stringify(list_Product);
+    if (fixed_price === 0) {
+        input_transaction.removeAttribute('value');
+    } else {
+        input_transaction.value = fixed_price;
+    }
 }

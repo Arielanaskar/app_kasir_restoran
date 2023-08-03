@@ -12,6 +12,7 @@
     <script defer src="/plugins/fontawesome/js/all.min.js"></script> 
     <link id="theme-style" rel="stylesheet" href="/css/portal.css">
 	<link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/images/logofood.ico"> 
 
 </head> 
 

@@ -23,11 +23,15 @@
                                 @foreach ($users as $user)
                                 <tr class="alert" role="alert">
                                     <td class="align-middle">
+                                        @if ($user->level->id === auth()->user()->id)
+                                            
+                                        @else
                                         <label class="checkbox-wrap checkbox-primary">
-                                            <input class="form-check-input text-info mt-0" type="checkbox" name="users[]" value="{{ $user->id }}">
+                                            <input class="form-check-input text-info mt-0" type="checkbox" name="users[]" data-role={{ $user->level->id }} value="{{ $user->id }}">
                                             <span class="checkmark"></span>
                                         </label>
                                         <a href="/user/{{ $user->id }}/edit" class="text-warning"><i class="fa-regular fa-pen-to-square mb-1 ms-2"></i></a>
+                                        @endif
                                     </td>
                                     <td class="d-flex align-items-center">
                                         <div class="img rounded-circle" style="width: 50px; height: 50px; background-size: cover; background-position: center; background-image: url('<?= asset('storage/profile/'.$user->picture) ?>');"></div>
@@ -36,8 +40,8 @@
                                             <span class="small">Added: {{ $user->created_at->format('d/m/Y') }}</span>
                                         </div>
                                     </td>
-                                    <td class="small align-middle">{{ $user->username }}</td>
-                                    <td class="small align-middle">{{ $user->level->level }}</td>
+                                    <td class="small align-middle">{{ $user->username === auth()->user()->username ? $user->username.'(You)' : $user->username }}</td>
+                                    <td class="small align-middle level">{{ $user->level->level }}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -84,6 +88,9 @@
         if (selectedCount === 0) {
             event.preventDefault(); 
             alert('Please select at least one employee to delete');
+        } else if (document.querySelectorAll('input[name="users[]"]:checked')[0].dataset.role === 1) {
+            event.preventDefault(); 
+            alert('The manager role cannot be deleted, it can only be edited.');
         } else {
             var confirmation = confirm('Are you sure you want to delete ' + selectedCount + ' selected employee?');
             if (!confirmation) {

@@ -59,11 +59,20 @@
             @endphp
             <tr>
                 <th scope="row">{{ $item->created_at->format('d M Y') }}</th>
-                <td>
+                @can('manager')
+                <td class="w-50">
                     @foreach ($item->transaction_details as $el)
                     {{ $el->menu->name.',' }}
                     @endforeach
                 </td>
+                @endcan
+                @can('cashier')
+                <td style="width: 70%;">
+                    @foreach ($item->transaction_details as $el)
+                    {{ $el->menu->name.',' }}
+                    @endforeach
+                </td>
+                @endcan
                 <td>{{ $item->no_table }}</td>
                 <td>Rp. {{ number_format($item->total_transaction, 0, ',', '.') }}</td>
                 @can('manager')
@@ -76,11 +85,9 @@
             <tfoot>
             @php
                 $arr_transaction = [];
-                $arr_payment = [];
 
                 foreach($data as $item) {
                     $arr_transaction[] = $item->total_transaction;
-                    $arr_payment[] = $item->total_payment;
                 };
             
                 function myfunction($v1,$v2)
@@ -89,12 +96,11 @@
                 }
 
                 $total_transaction = array_reduce($arr_transaction, "myfunction");
-                $total_payment = array_reduce($arr_payment, "myfunction");
             @endphp
             <tr>
                 @can('manager')
                 <th colspan="5" class="text-end">Total revenue</th>
-                <td>Rp. {{ number_format($total_payment, 0, ',', '.') }}</td>
+                <td>Rp. {{ number_format($total_transaction, 0, ',', '.') }}</td>
                 @endcan
 
                 @can('cashier')

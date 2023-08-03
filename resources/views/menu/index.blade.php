@@ -1,5 +1,4 @@
 @extends('layouts.main')
-
 @section('container')
     <h1 class="app-page-title mb-2">All Menu's</h1>
     <div class="menu mb-4">

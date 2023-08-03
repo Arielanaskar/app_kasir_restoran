@@ -20,6 +20,10 @@ class TransactionController extends Controller
     {
         $user = Auth::user();
 
+        if ($user->level_id === 3) {
+            return redirect()->back();
+        }
+
         if ($user->level_id == 1) {
             $all = Transaction::with(['transaction_details', 'transaction_details.menu'])
                                 ->where('status', 'paid')
@@ -69,6 +73,12 @@ class TransactionController extends Controller
      */
     public function create(Menu $menu)
     {
+        $user = Auth::user();
+
+        if ($user->level_id === 1 || $user->level_id === 3) {
+            return redirect()->back();
+        }
+        
         return view('transaction.create', [
             'foods' => $menu->where('category','food')->latest()->get(),
             'drinks' => $menu->where('category', 'drink')->latest()->get(),
@@ -122,6 +132,12 @@ class TransactionController extends Controller
      */
     public function show(Transaction $transaction)
     {
+        $user = Auth::user();
+
+        if ($user->level_id === 1 || $user->level_id === 3) {
+            return redirect()->back();
+        }
+        
         return view('transaction.show', [
             'data' => $transaction->with(['transaction_details','transaction_details.menu','user'])->where('id', '=', $transaction->id)->get()
         ]);
